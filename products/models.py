@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 class Product(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
+    name_en = models.CharField(max_length=100)
     description = models.TextField()
+    description_en = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
